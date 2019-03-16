@@ -1,12 +1,12 @@
 # VideoMaya
-Programa para detectar piezas en el Robot Maya de la sala CAM de la UNiversidad Nacional de Colombia y establecer cordenadas respectivas.
+Programa para detectar piezas en diferentes celdas de la sala CAM de la UNiversidad Nacional de Colombia y establecer cordenadas respectivas para diferentes máquinas.
 
 Al correr el script Buscar pieza.py, teniendo en cuenta:
 
   usage: BuscarPieza.py [-h] Objetivo Color Camara Muestras
 
   Busca y determina la posicion de objetos circulares para ejecutar Pick and
-  Place con el Robot Maya
+  Place.
 
   positional arguments:
     Objetivo    Objetivo de la Maya
