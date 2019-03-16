@@ -9,9 +9,9 @@ Al correr el script Buscar pieza.py, teniendo en cuenta:
   Place con el Robot Maya
 
   positional arguments:
-    Objetivo    Objetivo de la Maya (SDV, Buffer)
-    Color       Color del objeto a tomar (rojo, verde, azul)
-    Camara      Marca de la camara usada
+    Objetivo    Objetivo de la Maya
+    Color       Color del objeto a tomar
+    Camara      Camara usada
     Muestras    Cantidad de imagenes usadas para encontrar la pieza
   
   optional arguments:
@@ -20,6 +20,17 @@ Al correr el script Buscar pieza.py, teniendo en cuenta:
 Por ejemplo:
 python BuscarPieza.py Buffer rojo Foscam 50
 
-Busca piezas rojas en el buffer utilizando una camara Foscam y tomando 50 muestras para promediar el resultado. Por el momento solo está configurado el espacio del Buffer y los comandos para una cámara Foscam.
+Busca piezas rojas en el buffer utilizando una camara Foscam y tomando 50 muestras para promediar el resultado. 
+
+Por el momento solo se ha establecido los atributos para:
+  Objetivos:
+  - Buffer
+  - SDVMaya
+  Camaras:
+  - Web
+  - FoscamMotoman
+  - FoscamMaya
+
+Para añadir nuevas mquinas o cámaras se puede a través del script Configuraciones siguiendo los lineamientos en él explicados.
 
 En caso de existir multipieza, el programá mostrará una imagen con las piezas señaladas para que el usuario elija la pieza objetivo.
