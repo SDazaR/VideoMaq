@@ -28,10 +28,10 @@ def on_mouse(event, x, y, flags, param): #funcion al pulsar click izquierdo en v
 if __name__ == '__main__':
     
     #Define inputs del modulo
-    parser = argparse.ArgumentParser(description='Busca y determina la posicion de objetos circulares para ejecutar Pick and Place con el Robot Maya')
-    parser.add_argument('Objetivo', help='Objetivo de la Maya (SDV, Buffer(x=1, y=-0.1, z=1.5))')
-    parser.add_argument('Color', help='Color del objeto a tomar (rojo, verde, azul)')
-    parser.add_argument('Camara', help='Marca de la camara usada')
+    parser = argparse.ArgumentParser(description='Busca y determina la posicion de objetos circulares para ejecutar Pick and Place')
+    parser.add_argument('Objetivo', help='Objetivo de la maquina')
+    parser.add_argument('Color', help='Color del objeto a tomar')
+    parser.add_argument('Camara', help='Camara usada')
     parser.add_argument('Muestras', help='Cantidad de imagenes usadas para encontrar la pieza')
     args = parser.parse_args()
     
