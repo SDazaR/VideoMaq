@@ -1,7 +1,7 @@
 # VideoMaya
 Programa para detectar piezas en diferentes celdas de la sala CAM de la UNiversidad Nacional de Colombia y establecer cordenadas respectivas para diferentes máquinas.
 
-Al correr el script Buscar pieza.py, teniendo en cuenta:
+Al correr el script Buscar pieza.py, tener en cuenta:
 
   usage: BuscarPieza.py [-h] Objetivo Color Camara Muestras
 
