@@ -4,7 +4,7 @@ import numpy as np
 ###Atributos de las Maquinas
 
 
-#home: Posicion home de la camara para realizar vision de maquina segun el objetivo
+#home: Posicion home de la camara para realizar vision de maquina segun el objetivo en metros
 #S1: Sistema coordenado de la maquina
 #S2: Sistema coordenado en el piso con las esquinas de lo observado por la camara
 #O: Coordenadas del origen de S2 respecto a S1
@@ -36,7 +36,7 @@ import numpy as np
 class Maquina:
     def __init__(self, objetivo):
         if objetivo== 'BufferMaya': #Actualizado
-            self.home=(1000, -100, 1500)
+            self.home=(1.000, -0.100, 1.500)
         
             self.O=(1870,-120,50) 
             self.Ang=-math.pi/2+math.pi/32
@@ -50,7 +50,7 @@ class Maquina:
             self.height_inicio=215.0/720.0
             self.height_final=640.0/720.0
         elif objetivo== 'SDVMaya':
-            self.home=(1000, -100, 1500)
+            self.home=(1.000, -0.100, 1.500)
         
             self.O=(900,58,0)
             self.Ang=math.pi/2+math.pi/36
@@ -64,7 +64,7 @@ class Maquina:
             self.height_inicio=240.0/720.0
             self.height_final=480.0/720.0
         elif objetivo== 'SDVMotoman': #Actualizado
-            self.home=(-293.3, -910.18, -110.7)        
+            self.home=(-0.2933, -0.9102, -0.1107)        
         
             self.O=(108.018+25,-545.98-25,-1785.76)
             self.Ang=math.pi
@@ -78,7 +78,7 @@ class Maquina:
             self.height_inicio=150.0/720.0
             self.height_final=600.0/720.0
         else:
-            self.home=(1000, -100, 1500)
+            self.home=(1.000, -0.100, 1.500)
         
             self.O=(900,58,0)
             self.Ang=math.pi/2+math.pi/36

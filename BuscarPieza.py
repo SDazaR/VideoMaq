@@ -1,3 +1,4 @@
+import sys
 import cv2
 import numpy as np
 import argparse
@@ -7,6 +8,7 @@ import MoverFoscam
 import EncontrarGeometria as findO
 import Pixels2Coor
 import Configuraciones as conf
+
 
 
 global pt
@@ -23,7 +25,7 @@ def on_mouse(event, x, y, flags, param): #funcion al pulsar click izquierdo en v
     if event == cv2.EVENT_LBUTTONDOWN:
         pt = (x, y)
         k=1
-        print "Punto seleccionado"
+        print 'Punto seleccionado'
         print pt
 
 if __name__ == '__main__':
@@ -38,9 +40,8 @@ if __name__ == '__main__':
     
     maq= conf.Maquina(args.Objetivo)
     cam= conf.Cam(args.Camara)
-    
 
-    raw_input("Lleve maquina a "+ str(maq.home)+ "y presione Enter")
+    raw_input("Lleve maquina a "+ str(maq.home)+ "[m] y presione Enter")
     
     if cam.fuente==0:
         cap = cv2.VideoCapture(cam.fuente)
@@ -64,7 +65,7 @@ if __name__ == '__main__':
             mask=filtro.Color(frame, args.Color)
             mask=edit.Suavizar(mask) 
         except:
-            print ('No se pudo obtener imagen')
+            print 'No se pudo obtener imagen'
             break
         
         #Busca circulos    
@@ -97,11 +98,14 @@ if __name__ == '__main__':
             #Toma las muestras y guarda los centros hayados
             for i in circles[0,:]:
                 if j<muestras and k==1:
-                    print "muestra ",j+1, [i[0],i[1]]
                     centros[j]=[i[0],i[1]]
                     if j==0:
+                        print "Tomando ", args.Muestras, " muestras"
                         suma[0]=centros[j]
                     else:
+                        sys.stdout.write("\r" + str((j+1)*100/muestras)+'/% Completado')
+                        sys.stdout.flush()
+                        #print('{}',format(, end='\r')
                         suma[0]=centros[j]+suma[0]
                     j=j+1
                 # draw the outer circle
@@ -111,11 +115,12 @@ if __name__ == '__main__':
              
         #Una vez tomadas todas las muestras, calcula el promedio   
         if j==muestras:
+            print
             coorinvpix=suma/muestras
             
             #Convertir coordenadas en pixeles invertidas a un punto segun la Maya
             punto=Pixels2Coor.Pix2Coor(frame,coorinvpix,args.Objetivo)
-            print "El punto es ", punto
+            print "Las coordenadas de la pieza en ", args.Objetivo, " son ", punto, "[m]"
             j=j+1
             break          
 
