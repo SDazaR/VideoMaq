@@ -12,7 +12,7 @@ def Undistort(frame,Camara):
 def Crop(frame, objetivo):
     width, height=frame.shape[:2]
     maq=conf.Maquina(objetivo)
-    frame=frame[int(maq.height_inicio*height): int(maq.height_final*height), int(maq.width_inicio*width):int(maq.width_final*width)]
+    frame=frame[int(maq.height_inicio*width): int(maq.height_final*width), int(maq.width_inicio*height):int(maq.width_final*height)]
     return frame
     
 def Suavizar(frame):

@@ -3,6 +3,8 @@ import numpy as np
         
 ###Atributos de las Maquinas
 
+
+#home: Posicion home de la camara para realizar vision de maquina segun el objetivo
 #S1: Sistema coordenado de la maquina
 #S2: Sistema coordenado en el piso con las esquinas de lo observado por la camara
 #O: Coordenadas del origen de S2 respecto a S1
@@ -33,19 +35,23 @@ import numpy as np
 
 class Maquina:
     def __init__(self, objetivo):
-        if objetivo== 'Buffer': #Actualizado
-            self.O=(1775,-105,50) 
-            self.Ang=-math.pi/2+math.pi*0.07
-            self.CFos=np.array([[1435],[195],[2210]])
-            self.H=1040
-            self.xp2co= 890
-            self.yp2co= 1514
+        if objetivo== 'BufferMaya': #Actualizado
+            self.home=(1000, -100, 1500)
+        
+            self.O=(1870,-120,50) 
+            self.Ang=-math.pi/2+math.pi/32
+            self.CFos=np.array([[1530],[180],[2210]])
+            self.H=1000
+            self.xp2co= 1420
+            self.yp2co= 980
                 
             self.width_inicio=405.0/1080.0
             self.width_final=930.0/1080.0
             self.height_inicio=215.0/720.0
             self.height_final=640.0/720.0
         elif objetivo== 'SDVMaya':
+            self.home=(1000, -100, 1500)
+        
             self.O=(900,58,0)
             self.Ang=math.pi/2+math.pi/36
             self.CFos=np.array([[480],[1375],[2190]])
@@ -58,6 +64,8 @@ class Maquina:
             self.height_inicio=240.0/720.0
             self.height_final=480.0/720.0
         elif objetivo== 'SDVMotoman': #Actualizado
+            self.home=(-293.3, -910.18, -110.7)        
+        
             self.O=(108.018+25,-545.98-25,-1785.76)
             self.Ang=math.pi
             self.CFos=np.array([[-293.285+95+25],[-910.184-25],[-110.724-141]])
@@ -70,6 +78,8 @@ class Maquina:
             self.height_inicio=150.0/720.0
             self.height_final=600.0/720.0
         else:
+            self.home=(1000, -100, 1500)
+        
             self.O=(900,58,0)
             self.Ang=math.pi/2+math.pi/36
             self.CFos=np.array([[480],[1375],[2190]])

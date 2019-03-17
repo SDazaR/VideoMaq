@@ -22,6 +22,7 @@ def on_mouse(event, x, y, flags, param): #funcion al pulsar click izquierdo en v
     global k
     if event == cv2.EVENT_LBUTTONDOWN:
         pt = (x, y)
+        k=1
         print "Punto seleccionado"
         print pt
 
@@ -38,10 +39,13 @@ if __name__ == '__main__':
     maq= conf.Maquina(args.Objetivo)
     cam= conf.Cam(args.Camara)
     
+
+    raw_input("Lleve maquina a "+ str(maq.home)+ "y presione Enter")
+    
     if cam.fuente==0:
         cap = cv2.VideoCapture(cam.fuente)
     else:
-        cap = cv2.VideoCapture("rtsp://%s:%s@%s/videoMain"%cam.usr,cam.pwd,cam.fuente)
+        cap = cv2.VideoCapture('rtsp://%s:%s@%s/videoMain'%(cam.usr,cam.pwd,cam.fuente))
         #MoverFoscam.LlevarA('TopMost',fuente);
     
     j=0 #Contador de muestras tomadas
@@ -116,7 +120,7 @@ if __name__ == '__main__':
             break          
 
         #Abre ventana para observar la imagen analizada
-        #cv2.imshow('frame', frame)
+        cv2.imshow('frame', frame)
         #cv2.imshow('mask', mask)
         
         #Se interrumpe en caso de oprimir "q"
