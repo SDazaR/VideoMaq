@@ -10,8 +10,11 @@ Al correr el script Buscar pieza.py, tener en cuenta:
 
   positional arguments:
     Objetivo    Objetivo de la Maya
+
     Color       Color del objeto a tomar
+    
     Camara      Camara usada
+    
     Muestras    Cantidad de imagenes usadas para encontrar la pieza
   
   optional arguments:
@@ -23,13 +26,21 @@ python BuscarPieza.py Buffer rojo Foscam 50
 Busca piezas rojas en el buffer utilizando una camara Foscam y tomando 50 muestras para promediar el resultado. 
 
 Por el momento solo se ha establecido los atributos para:
+
   Objetivos:
+  
   - Buffer
-  - SDVMaya
+  
+  - SDVMotoman
+  
   Camaras:
+  
   - Web
+  
   - FoscamMotoman
+  
   - FoscamMaya
+  
 
 Para añadir nuevas mquinas o cámaras se puede a través del script Configuraciones siguiendo los lineamientos en él explicados.
 
