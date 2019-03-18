@@ -38,17 +38,19 @@ class Maquina:
         if objetivo== 'BufferMaya': #Actualizado
             self.home=(1.000, -0.100, 1.500)
         
-            self.O=(1870,-120,50) 
+            self.O=(1875,-95,50) 
             self.Ang=-math.pi/2+math.pi/32
-            self.CFos=np.array([[1530],[180],[2210]])
+            self.CFos=np.array([[1535],[200],[2210]])
             self.H=1000
-            self.xp2co= 1420
+            self.xp2co= 1360
             self.yp2co= 980
                 
             self.width_inicio=405.0/1080.0
             self.width_final=930.0/1080.0
             self.height_inicio=215.0/720.0
             self.height_final=640.0/720.0
+            
+            self.alto=200
         elif objetivo== 'SDVMaya':
             self.home=(1.000, -0.100, 1.500)
         
@@ -63,6 +65,8 @@ class Maquina:
             self.width_final=720.0/1080.0
             self.height_inicio=240.0/720.0
             self.height_final=480.0/720.0
+            
+            self.alto=200
         elif objetivo== 'SDVMotoman': #Actualizado
             self.home=(-0.2933, -0.9102, -0.1107)        
         
@@ -77,6 +81,8 @@ class Maquina:
             self.width_final=720.0/1080.0
             self.height_inicio=150.0/720.0
             self.height_final=600.0/720.0
+            
+            self.alto=0
         else:
             self.home=(1.000, -0.100, 1.500)
         
@@ -91,6 +97,8 @@ class Maquina:
             self.width_final=1
             self.height_inicio=1/720
             self.height_final=1
+            
+            self.alto=0
 class Cam:
     def __init__(self, Camara):
         if Camara== 'Web':#Actualizado

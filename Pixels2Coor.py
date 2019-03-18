@@ -24,6 +24,6 @@ def Pix2Coor(frame,coorinvpix,objetivo):
     puntoCam=coo+t*vec #Punto en coordenadas de la camara en milimetros donde esta la pieza segun S2
     punto=MTinv.dot(np.append(puntoCam,[1]))
     punto=punto[0:-1] #Punto donde esta la pieza en S1
-    punto=(punto+[0, 0,0])/1000
+    punto=(punto+[0, 0,maq.alto])/1000
     
     return punto
