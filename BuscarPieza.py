@@ -125,7 +125,7 @@ if __name__ == '__main__':
             break          
 
         #Abre ventana para observar la imagen analizada
-        #cv2.imshow('frame', frame)
+        cv2.imshow('frame', frame)
         #cv2.imshow('mask', mask)
         
         #Se interrumpe en caso de oprimir "q"

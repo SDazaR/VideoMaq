@@ -29,7 +29,7 @@ Por el momento solo se ha establecido los atributos para:
 
   Objetivos:
   
-  - Buffer
+  - BufferMaya
   
   - SDVMotoman
   
@@ -40,6 +40,16 @@ Por el momento solo se ha establecido los atributos para:
   - FoscamMotoman
   
   - FoscamMaya
+  
+  Colores:
+  
+  - rojo
+  
+  - azul
+  
+  - verde
+
+  
   
 
 Para añadir nuevas mquinas o cámaras se puede a través del script Configuraciones siguiendo los lineamientos en él explicados.

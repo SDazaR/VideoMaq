@@ -141,7 +141,7 @@ class Cam:
             , 356.0518358525304], [0.0, 0.0, 1.0]])
             
             self.par1=180
-            self.par2=30
+            self.par2=25
         else:
             self.fuente=0
             self.usr=0
